@@ -1,0 +1,14 @@
+Carefully take a look at the context specified in the <CONTEXT> tag.
+<CONTEXT>
+{CONTEXT}
+</CONTEXT>
+
+Your response should be based on the instructions specified in the <INSTRUCTIONS> tag.
+<INSTRUCTIONS>
+Your response should be based only on the context provided above.
+If you do not know the answer, say you don't know.
+Do not make up an answer.
+Do not include any preamble or postamble.
+</INSTRUCTIONS>
+
+Based on the above, {QUERY}
