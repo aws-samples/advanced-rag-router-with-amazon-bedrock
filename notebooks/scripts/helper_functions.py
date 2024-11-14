@@ -301,7 +301,17 @@ def does_kb_meet_requirements(bedrock_agt_client, kb_id):
                         vector_ingestion_config = str(get_ds_details_response['dataSource']['vectorIngestionConfiguration'])
                     kb_meets_reqs = True
                     break
+                elif ds_type == 'WEB':
+                    kb_name = get_kb_details_response['knowledgeBase']['name']
+                    embedding_model_arn = get_kb_details_response['knowledgeBase']['knowledgeBaseConfiguration']['vectorKnowledgeBaseConfiguration']['embeddingModelArn']
+                    aoss_collection_arn = get_kb_details_response['knowledgeBase']['storageConfiguration']['opensearchServerlessConfiguration']['collectionArn']
+                    s3_bucket_arn = ''
+                    if 'vectorIngestionConfiguration' in get_ds_details_response['dataSource']:
+                        vector_ingestion_config = str(get_ds_details_response['dataSource']['vectorIngestionConfiguration'])
+                    kb_meets_reqs = True
+                    
     return kb_meets_reqs, kb_name, ds_id, s3_bucket_name, embedding_model_arn, aoss_collection_arn, vector_ingestion_config
+
 
 
 def sync_to_kb(bedrock_agt_client, ds_id, kb_id, job_desc):
