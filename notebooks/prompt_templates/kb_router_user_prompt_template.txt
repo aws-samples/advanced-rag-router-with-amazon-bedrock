@@ -1,14 +1,8 @@
 Carefully take a look at the Knowledge Base information specified in the <KBs> tag.
 
 <KBs>
-	<KB>
-		<CATEGORY>{CATEGORY_1}</CATEGORY>
-		<ID>{ID_1}</ID>
-	</KB>
-	<KB>
-		<CATEGORY>{CATEGORY_2}</CATEGORY>
-		<ID>{ID_2}</ID>
-	</KB>
+<CATEGORY1>{CATEGORY_1}</CATEGORY1>
+<CATEGORY2>{CATEGORY_2}</CATEGORY2>
 </KBs>
 
 Look at the query specified in the <QUERY> tag.
@@ -20,18 +14,15 @@ Look at the query specified in the <QUERY> tag.
 Now, look at the output JSON format specified in the <OUTPUT> tag.
 
 <OUTPUT>
-{{
-  "category": "",
-  "id": ""
-}}
+chosen_category
 </OUTPUT>
 
 Now, follow the instructions specified in the <INSTRUCTIONS> tag.
 <INSTRUCTIONS>
 - Identify the category for the query specified in the <QUERY> tag. It should be one of the values specified in the <CATEGORY> tags inside the <KBs> tag.
-- Based on the identified category, create an output JSON message as specified in the <OUTPUT> tag with corresponding values for "category" and "id".
-- If you do not know the answer, mention the "category" as "UNKNOWN" and the "id" as "NA".
-- Your response should ONLY be a valid JSON as specified in the <OUTPUT> tag.
+- Based on the identified category, create an output message as specified in the <OUTPUT> tag with corresponding values for "category".
+- If you do not know the answer, mention the "category" as "UNKNOWN".
+- Your response should ONLY be a valid output as specified in the <OUTPUT> tag.
 - Do not make up an answer.
 - Do not include any preamble or postamble.
 </INSTRUCTIONS>
